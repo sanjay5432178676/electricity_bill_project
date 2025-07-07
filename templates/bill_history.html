@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bill History</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #eef2f3; padding: 40px;">
+    <div style="max-width: 900px; margin: auto; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 0 10px #bbb;">
+        <h2 style="text-align: center;">My Bill History</h2>
+
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+            <thead>
+                <tr style="background-color: #f2f2f2;">
+                    <th style="border: 1px solid #ccc; padding: 10px;">Consumer</th>
+                    <th style="border: 1px solid #ccc; padding: 10px;">Meter</th>
+                    <th style="border: 1px solid #ccc; padding: 10px;">Type</th>
+                    <th style="border: 1px solid #ccc; padding: 10px;">Units</th>
+                    <th style="border: 1px solid #ccc; padding: 10px;">Amount</th>
+                    <th style="border: 1px solid #ccc; padding: 10px;">Status</th>
+                    <th style="border: 1px solid #ccc; padding: 10px;">Date/Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for bill in bills %}
+                <tr>
+                    <td style="border: 1px solid #ccc; padding: 10px;">{{ bill[1] }}</td>
+                    <td style="border: 1px solid #ccc; padding: 10px;">{{ bill[2] }}</td>
+                    <td style="border: 1px solid #ccc; padding: 10px;">{{ bill[3] }}</td>
+                    <td style="border: 1px solid #ccc; padding: 10px;">{{ bill[4] }}</td>
+                    <td style="border: 1px solid #ccc; padding: 10px;">Rs {{ bill[5] }}</td>
+                    <td style="border: 1px solid #ccc; padding: 10px;">
+                        {% if bill[6] == "Paid" %}
+                            <span style="color: green;">{{ bill[6] }}</span>
+                        {% else %}
+                            <span style="color: red;">{{ bill[6] }}</span>
+                        {% endif %}
+                    </td>
+                    <td style="border: 1px solid #ccc; padding: 10px;">{{ bill[7] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <p style="margin-top: 20px; font-size: 16px;">
+            <strong>Total Unpaid:</strong> <span style="color: red;">Rs {{ total_unpaid }}</span>
+        </p>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="/generate_bill">Generate New Bill</a> |
+            <a href="/">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

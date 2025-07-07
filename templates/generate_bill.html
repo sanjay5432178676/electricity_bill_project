@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Electricity Bill</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f2f2f2; padding: 50px;">
+    <div style="max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px #ccc;">
+        <h2 style="text-align: center;">Generate Electricity Bill</h2>
+        <form action="/calculate" method="get">
+            <label>Consumer Name:</label><br>
+            <input type="text" name="consumer" required style="width: 100%; padding: 10px; margin: 8px 0;"><br>
+            
+            <label>Meter Number:</label><br>
+            <input type="text" name="meter" required style="width: 100%; padding: 10px; margin: 8px 0;"><br>
+            
+            <label>Connection Type:</label><br>
+            <select name="type" style="width: 100%; padding: 10px; margin: 8px 0;">
+                <option value="domestic">Domestic</option>
+                <option value="commercial">Commercial</option>
+            </select><br>
+            
+            <label>Units Consumed:</label><br>
+            <input type="number" name="units" required style="width: 100%; padding: 10px; margin: 8px 0;"><br>
+
+            <input type="submit" value="Generate Bill" style="width: 100%; background-color: #4CAF50; color: white; padding: 12px; border: none; border-radius: 4px; cursor: pointer;">
+        </form>
+        <p style="text-align: center; margin-top: 15px;">
+            <a href="/bill_history">View My Bills</a> | <a href="/">Logout</a>
+        </p>
+    </div>
+</body>
+</html>

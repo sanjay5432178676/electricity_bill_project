@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: electricity-bill-app
+    env: python
+    buildCommand: ""
+    startCommand: python app.py

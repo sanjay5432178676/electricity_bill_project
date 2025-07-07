@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electricity Bill Result</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 50px;">
+    <div style="max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px #ccc;">
+        <h2 style="text-align: center;">Electricity Bill</h2>
+        
+        <p><strong>User:</strong> {{ user }}</p>
+        <p><strong>Consumer Name:</strong> {{ consumer }}</p>
+        <p><strong>Meter Number:</strong> {{ meter }}</p>
+        <p><strong>Connection Type:</strong> {{ type }}</p>
+        <p><strong>Units Consumed:</strong> {{ units }}</p>
+        <p><strong>Amount:</strong> <span style="color: green;">Rs {{ amount }}</span></p>
+        <p><strong>Status:</strong> <span style="color: red;">{{ status }}</span></p>
+        <p><strong>Generated On:</strong> {{ date }}</p>
+
+        <br>
+        <div style="text-align: center;">
+            <a href="/bill_history" style="margin-right: 10px;">View My Bills</a> |
+            <a href="/generate_bill" style="margin: 0 10px;">Generate Another</a> |
+            <a href="/" style="margin-left: 10px;">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #e6f0ff; padding: 50px;">
+    <div style="max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 12px #aaa;">
+        <h2 style="text-align: center; color: #333;">Welcome, {{ user }}!</h2>
+        <p style="text-align: center;">Use the options below to manage your electricity bills:</p>
+
+        <div style="margin-top: 30px;">
+            <a href="/generate_bill" style="display: block; margin: 10px 0; text-align: center; background-color: #4CAF50; color: white; padding: 12px; text-decoration: none; border-radius: 5px;">Generate New Bill</a>
+            <a href="/bill_history" style="display: block; margin: 10px 0; text-align: center; background-color: #2196F3; color: white; padding: 12px; text-decoration: none; border-radius: 5px;">View My Bill History</a>
+            <a href="/search_meter" style="display: block; margin: 10px 0; text-align: center; background-color: #ff9800; color: white; padding: 12px; text-decoration: none; border-radius: 5px;">Search by Meter Number</a>
+            <a href="/" style="display: block; margin: 10px 0; text-align: center; background-color: #f44336; color: white; padding: 12px; text-decoration: none; border-radius: 5px;">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
