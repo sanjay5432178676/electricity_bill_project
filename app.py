@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.secret_key = 'secret_key_for_session'
 
 # Connect to MongoDB using environment variable
-client = MongoClient(os.environ[mongodb+srv://sanjay:<db_password>@cluster0.rcubvnv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0])
+client = MongoClient(os.environ['mongodb+srv://sanjay:<db_password>@cluster0.rcubvnv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'])
 db = client['electricity_db']
 users = db['users']
 bills = db['bills']
@@ -153,8 +153,4 @@ def calculate_amount(units, conn_type):
         elif units <= 500:
             return 100 * 6.00 + (units - 100) * 7.00
         else:
-            return 100 * 6.00 + 400 * 7.00 + (units - 500) * 8.00
-
-# -------------------- Run App --------------------
-if __name__ == "__main__":
-    app.run(debug=True)
+            return 100 * 6.00 + 400 * 7.00 + (units - 500) * 8.00
