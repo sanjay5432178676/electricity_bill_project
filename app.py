@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.secret_key = 'secret_key_for_session'
 
 # Connect to MongoDB using environment variable
-client = MongoClient(os.environ['MONGO_URI'])
+client = MongoClient(os.environ["MONGO_URI"], tls=True, tlsAllowInvalidCertificates=True)
 db = client['electricity_db']
 users = db['users']
 bills = db['bills']
