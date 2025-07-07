@@ -157,5 +157,8 @@ def calculate_amount(units, conn_type):
 
 # -------------------- Run App --------------------
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+    import os
+    port = int(os.environ.get("PORT", 5000))  # use PORT given by Render
+    app.run(host="0.0.0.0", port=port)        # bind to 0.0.0.0 for Render
+
 
